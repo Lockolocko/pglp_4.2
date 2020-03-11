@@ -6,11 +6,11 @@ package com.gillotroux;
 import java.util.Map;
 
 /**
- * Interpreteur.
+ * MoteurRPN.
  * @author Lockolocko
  *
  */
-public class Interpreteur {
-    private Map<String,GeneriqueCommand> donnee;
+public class MoteurRPN {
+    private Map<String,SpecificCommand> donnee;
 
 }
