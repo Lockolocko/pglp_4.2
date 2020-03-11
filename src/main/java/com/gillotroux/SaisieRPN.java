@@ -6,11 +6,12 @@ package com.gillotroux;
 import java.util.Map;
 
 /**
- * MoteurRPN.
+ * SaisieRPN.
  * @author Lockolocko
  *
  */
-public class MoteurRPN {
-    private Map<String,SpecificCommand> moteur;
-
+public class SaisieRPN {
+    private MoteurRPN moteur;
+    private Interpreteur interprete;
+    
 }
