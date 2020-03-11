@@ -8,12 +8,4 @@ package com.gillotroux;
  *
  */
 public interface SpecificCommand {
-    /**
-     * Addition.
-     */
-    void addition();
-    /**
-     * Soustraction.
-     */
-    void soustraction();
 }
