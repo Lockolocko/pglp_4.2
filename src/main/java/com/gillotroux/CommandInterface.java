@@ -2,7 +2,13 @@
  * Package de Gillot-Roux.
  */
 package com.gillotroux;
-
-public class CommandInterface {
-
+/**
+ * Interface.
+ * @author Lockolocko
+ */
+public interface CommandInterface {
+    /**
+     * Applique l'opération.
+     */
+    void apply();
 }
