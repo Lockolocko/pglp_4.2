@@ -1,5 +1,12 @@
+/**
+ * Package de Gillot-Roux.
+ */
 package com.gillotroux;
-
-public class GeneriqueCommand {
+/**
+ * Quit et undo.
+ * @author Lockolocko
+ *
+ */
+public interface GeneriqueCommand extends CommandInterface {
 
 }
