@@ -8,5 +8,12 @@ package com.gillotroux;
  *
  */
 public interface GeneriqueCommand extends CommandInterface {
-
+    /**
+     * Quit.
+     */
+    void quit();
+    /**
+     * Undo.
+     */
+    void undo();
 }
