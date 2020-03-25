@@ -56,7 +56,10 @@ public class MoteurRPN {
     }
     static MoteurRPN init() {
         MoteurRPN moteurInit= new MoteurRPN();
-        moteurInit.a
+        SpecificCommand plus = new Addition();
+        SpecificCommand moins = new Soustraction();
+        moteurInit.addCommand("+",plus);
+        moteurInit.addCommand("-",moins);
         return moteurInit;
     }
 }
