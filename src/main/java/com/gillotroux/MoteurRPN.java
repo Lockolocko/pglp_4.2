@@ -74,7 +74,7 @@ public class MoteurRPN {
         moteurInit.addCommand("+",plus);
         moteurInit.addCommand("-",moins);
         moteurInit.addCommand("*",mul);
-        moteurInit.addCommand("-/",div);
+        moteurInit.addCommand("/",div);
         return moteurInit;
     }
 }

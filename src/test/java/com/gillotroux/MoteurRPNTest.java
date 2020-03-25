@@ -24,6 +24,16 @@ public class MoteurRPNTest {
         moteurTest.enregistre(5);
         moteurTest.executeCommand("-");
         moteurTest.affiche();
+        
+        // Test de la multiplication.
+        moteurTest.enregistre(15);
+        moteurTest.executeCommand("*");
+        moteurTest.affiche();
+        
+        // Test de la division.
+        moteurTest.enregistre(3);
+        moteurTest.executeCommand("/");
+        moteurTest.affiche();
     }
 
 }
