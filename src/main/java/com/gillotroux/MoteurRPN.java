@@ -69,8 +69,12 @@ public class MoteurRPN {
         MoteurRPN moteurInit= new MoteurRPN();
         SpecificCommand plus = new Addition();
         SpecificCommand moins = new Soustraction();
+        SpecificCommand mul = new Multiplication();
+        SpecificCommand div = new Division();
         moteurInit.addCommand("+",plus);
         moteurInit.addCommand("-",moins);
+        moteurInit.addCommand("*",mul);
+        moteurInit.addCommand("-/",div);
         return moteurInit;
     }
 }
