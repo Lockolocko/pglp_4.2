@@ -8,7 +8,12 @@ public class MoteurRPNTest {
 
     @Test
     public void test() {
-        fail("Not yet implemented");
+        MoteurRPN moteurTest=MoteurRPN.init();
+        
+        moteurTest.enregistre(3);
+        moteurTest.enregistre(4);
+        
+        moteurTest.affiche();
     }
 
 }

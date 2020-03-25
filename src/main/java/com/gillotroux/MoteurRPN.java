@@ -33,8 +33,9 @@ public class MoteurRPN {
      * Affiche les operandes de la liste.
      */
     void affiche() {
+        System.out.printf("Etat de la pile:");
         for(String operande : s) {
-            System.out.println(operande);
+            System.out.printf(" "+operande+" ");
         }
     }
     /**
