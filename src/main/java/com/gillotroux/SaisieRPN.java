@@ -23,10 +23,15 @@ public class SaisieRPN {
      * Scanner pour récupérer les entrées.
      */
     private Scanner sc = new Scanner(System.in);
+    /**
+     * Undo pile.
+     */
+    private Undo historique;
     
     public SaisieRPN() {
         this.moteur=MoteurRPN.init();
-        this.interprete=Interpreteur.init();
+        this.historique=new Undo();
+        this.interprete=Interpreteur.init(historique);    
     }
     
     public void entree() {
@@ -38,16 +43,19 @@ public class SaisieRPN {
         }
         else if (str.equals("undo")) {
             interprete.executeCommand(str);
+            moteur.setStack(historique.getPile());
             moteur.affiche();
         }
         else if (str.equals("-") || str.equals("*")  || str.equals("/") || str.equals("+")) {
             moteur.executeCommand(str);
+            historique.add(moteur.getStack());
             moteur.affiche();
         }
         else {
             try {
                 int nombre = Integer.parseInt(str);
                 moteur.enregistre(nombre);
+                historique.add(moteur.getStack());
                 moteur.affiche();
                 } catch(NumberFormatException e) {
                 System.out.println("Cette entrée est invalide");

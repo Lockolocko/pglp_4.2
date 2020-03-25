@@ -11,22 +11,44 @@ import java.util.Stack;
  *
  */
 public class Undo implements GeneriqueCommand {
-    private Stack<Stack<String>> historiquePile;
+    private static Stack<Stack<String>> historiquePile;
     
     public Undo() {
         historiquePile =new Stack<Stack<String>>();
     }
     
-    public void add (Stack<String> pile) {
-        historiquePile.push(pile);
+    public static void add (Stack<String> pile) {
+        @SuppressWarnings("unchecked")
+        Stack<String> pileCopie= (Stack<String>) pile.clone();
+        historiquePile.push(pileCopie);
     }
     
     public Stack<String> getPile() {
-        return historiquePile.lastElement();
+        if (!historiquePile.isEmpty()) {
+            return historiquePile.lastElement();
+        }
+        else {
+            System.out.println("Undo impossible! La pile est vide.");
+            return new Stack<String>();
+        }
     }
     
     public void apply() {
-        historiquePile.pop();
+        if (!historiquePile.isEmpty()) {
+            historiquePile.pop();
+        }
+        else {
+            System.out.println("Undo impossible! La pile est vide.");
+        }
+    }
+    
+    public static void affichage() {
+        for (Stack<String> p : historiquePile) {
+            for (String elem : p) {
+                System.out.print(elem);
+            }
+            System.out.println("");
+        }
     }
 
 }

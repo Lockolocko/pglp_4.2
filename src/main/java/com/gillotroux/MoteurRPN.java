@@ -62,6 +62,22 @@ public class MoteurRPN {
         }
     }
     /**
+     * Prend une nouvelle pile et la copie dans celle qui été couramment utilisée.
+     * @param pile
+     */
+    void setStack(Stack<String> pile) {
+        @SuppressWarnings("unchecked")
+        Stack<String> pileCopie= (Stack<String>) pile.clone();
+        s= pileCopie;
+    }
+    /**
+     * Retourne la pile courante.
+     * @return
+     */
+    Stack<String> getStack() {
+        return s;
+    }
+    /**
      * Constructeur public qui créer les commandes de notre moteur.
      * @return
      */

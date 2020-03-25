@@ -44,12 +44,11 @@ public class Interpreteur {
      * Constructeur public avec les fonctions prédéfinis.
      * @return
      */
-    static Interpreteur init() {
+    static Interpreteur init(Undo historique) {
         Interpreteur interpreteur = new Interpreteur();
         GeneriqueCommand quit = new Quit();
-        GeneriqueCommand undo = new Undo();
         interpreteur.addCommand("quit", quit);
-        interpreteur.addCommand("undo", undo);
+        interpreteur.addCommand("undo", historique);
         return interpreteur;
     }
 }
