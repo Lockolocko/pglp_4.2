@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 /**
  * SaisieRPN.
+ * 
  * @author Lockolocko
  *
  */
@@ -27,40 +28,37 @@ public class SaisieRPN {
      * Undo pile.
      */
     private Undo historique;
-    
+
     public SaisieRPN() {
-        this.moteur=MoteurRPN.init();
-        this.historique=new Undo();
-        this.interprete=Interpreteur.init(historique);    
+        this.moteur = MoteurRPN.init();
+        this.historique = new Undo();
+        this.interprete = Interpreteur.init(historique);
     }
-    
+
     public void entree() {
         System.out.println("Veuillez saisir une action :");
         String str = sc.nextLine();
-        
+
         if (str.equals("quit")) {
             interprete.executeCommand(str);
-        }
-        else if (str.equals("undo")) {
+        } else if (str.equals("undo")) {
             interprete.executeCommand(str);
             moteur.setStack(historique.getPile());
             moteur.affiche();
-        }
-        else if (str.equals("-") || str.equals("*")  || str.equals("/") || str.equals("+")) {
+        } else if (str.equals("-") || str.equals("*") || str.equals("/") || str.equals("+")) {
             moteur.executeCommand(str);
             historique.add(moteur.getStack());
             moteur.affiche();
-        }
-        else {
+        } else {
             try {
                 int nombre = Integer.parseInt(str);
                 moteur.enregistre(nombre);
                 historique.add(moteur.getStack());
                 moteur.affiche();
-                } catch(NumberFormatException e) {
+            } catch (NumberFormatException e) {
                 System.out.println("Cette entrée est invalide");
-              }      
+            }
         }
-        
+
     }
 }

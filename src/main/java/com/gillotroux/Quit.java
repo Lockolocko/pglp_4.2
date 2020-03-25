@@ -2,8 +2,10 @@
  * Package de Gillot-Roux.
  */
 package com.gillotroux;
+
 /**
  * Quit.
+ * 
  * @author Lockolocko
  *
  */
