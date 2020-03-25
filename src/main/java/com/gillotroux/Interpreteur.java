@@ -17,13 +17,9 @@ public class Interpreteur {
      * Commandes quit et undo.
      */
     private Map<String,GeneriqueCommand> commands;
-    private Stack<String> s;
-    private int a;
-    private int b;
 
     private Interpreteur () {
         this.commands=new HashMap<String,GeneriqueCommand>();
-        this.s=new Stack<String>();
     }
     
     void addCommand(String name,GeneriqueCommand command) {
