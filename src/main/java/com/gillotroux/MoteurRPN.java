@@ -40,6 +40,7 @@ public class MoteurRPN {
         for(String operande : s) {
             System.out.printf(" "+operande+" ");
         }
+        System.out.println("");
     }
     /**
      * Ajoute une commande.
@@ -55,9 +56,15 @@ public class MoteurRPN {
      */
     void executeCommand(String name) {
         if(this.moteur.containsKey(name)) {
-            this.moteur.get(name).apply();
+            int b = Integer.valueOf(s.pop());
+            int a = Integer.valueOf(s.pop());
+            s.push(String.valueOf(this.moteur.get(name).apply(a,b)));
         }
     }
+    /**
+     * Constructeur public qui créer les commandes de notre moteur.
+     * @return
+     */
     static MoteurRPN init() {
         MoteurRPN moteurInit= new MoteurRPN();
         SpecificCommand plus = new Addition();

@@ -7,5 +7,6 @@ package com.gillotroux;
  * @author Lockolocko
  *
  */
-public interface GeneriqueCommand extends CommandInterface {
+public interface GeneriqueCommand {
+    void apply();
 }

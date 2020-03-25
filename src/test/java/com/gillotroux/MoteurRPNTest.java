@@ -14,6 +14,16 @@ public class MoteurRPNTest {
         moteurTest.enregistre(4);
         
         moteurTest.affiche();
+        
+        // Test de l'addition.
+        moteurTest.executeCommand("+");
+        
+        moteurTest.affiche();
+        
+        // Test de la soutraction.
+        moteurTest.enregistre(5);
+        moteurTest.executeCommand("-");
+        moteurTest.affiche();
     }
 
 }

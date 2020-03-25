@@ -12,7 +12,6 @@ public class Quit implements GeneriqueCommand {
      * Permet l'arrêt de la calcultrice.
      */
     public void apply() {
-        // TODO Auto-generated method stub
         System.exit(0);
     }
 

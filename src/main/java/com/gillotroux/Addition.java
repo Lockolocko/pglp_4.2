@@ -8,10 +8,12 @@ package com.gillotroux;
  *
  */
 public class Addition implements SpecificCommand {
-
-    public void apply() {
-        // TODO Auto-generated method stub
-        
+    /**
+     * Effectue la addition a + b
+     * @param a
+     * @param b
+     */
+    public int apply(int a,int b) {
+        return a+b;
     }
-
 }
