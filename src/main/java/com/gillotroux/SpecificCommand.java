@@ -8,4 +8,5 @@ package com.gillotroux;
  *
  */
 public interface SpecificCommand {
+    void apply();
 }

@@ -37,5 +37,26 @@ public class MoteurRPN {
             System.out.println(operande);
         }
     }
-
+    /**
+     * Ajoute une commande.
+     * @param name
+     * @param command
+     */
+    void addCommand(String name, SpecificCommand command) {
+        this.moteur.put(name,command);
+    }
+    /**
+     * Execute une commande.
+     * @param name
+     */
+    void executeCommand(String name) {
+        if(this.moteur.containsKey(name)) {
+            this.moteur.get(name).apply();
+        }
+    }
+    static MoteurRPN init() {
+        MoteurRPN moteurInit= new MoteurRPN();
+        moteurInit.a
+        return moteurInit;
+    }
 }
