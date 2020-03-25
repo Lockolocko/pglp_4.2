@@ -7,5 +7,5 @@ package com.gillotroux;
  * @author Lockolocko
  *
  */
-public interface GeneriqueCommand extends CommandInterface {
+public interface GeneriqueCommand extends CommandInterface {x
 }
