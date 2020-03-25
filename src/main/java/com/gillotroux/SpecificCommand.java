@@ -7,6 +7,5 @@ package com.gillotroux;
  * @author Lockolocko
  *
  */
-public interface SpecificCommand {
-    void apply();
+public interface SpecificCommand extends CommandInterface {
 }
