@@ -12,6 +12,9 @@ import java.util.Stack;
  *
  */
 public class Interpreteur {
+    /**
+     * 
+     */
     private Map<String,GeneriqueCommand> donnee;
     private Stack s;
     private int a;
