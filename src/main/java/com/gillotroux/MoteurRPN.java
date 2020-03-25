@@ -29,6 +29,9 @@ public class MoteurRPN {
     void enregistre(final int a) {
         s.addElement(String.valueOf(a));
     }
+    String depiler() {
+        return s.pop();
+    }
     /**
      * Affiche les operandes de la liste.
      */
