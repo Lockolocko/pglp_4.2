@@ -3,17 +3,17 @@
  */
 package com.gillotroux;
 /**
- * Soustraction.
+ * Multiplication.
  * @author Lockolocko
  *
  */
-public class Soustraction implements SpecificCommand {
+public class Multiplication implements SpecificCommand {
     /**
-     * Effectue la soustraction a - b
+     * Effectue la multiplication a * b
      * @param a
      * @param b
      */
     public int apply(int a,int b) {
-        return a - b;
+        return a * b;
     }
 }
