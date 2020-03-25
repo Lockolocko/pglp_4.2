@@ -3,8 +3,6 @@
  */
 package com.gillotroux;
 
-import java.util.Map;
-import java.util.Stack;
 import java.util.Scanner;
 
 /**
