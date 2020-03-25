@@ -5,15 +5,12 @@ package com.gillotroux;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Stack;
 
 /**
  * Interpreteur.
- * 
  * @author Lockolocko
- *
  */
-public class Interpreteur {
+public final class Interpreteur {
     /**
      * Commandes quit et undo.
      */
@@ -28,20 +25,18 @@ public class Interpreteur {
 
     /**
      * Créer la commande name qui effectue command.
-     * 
      * @param name
      * @param command
      */
-    void addCommand(String name, GeneriqueCommand command) {
+    void addCommand(final String name, final GeneriqueCommand command) {
         this.commands.put(name, command);
     }
 
     /**
      * Execute la commande name.
-     * 
      * @param name
      */
-    void executeCommand(String name) {
+    void executeCommand(final String name) {
         if (this.commands.containsKey(name)) {
             this.commands.get(name).apply();
         }
@@ -49,10 +44,10 @@ public class Interpreteur {
 
     /**
      * Constructeur public avec les fonctions prédéfinis.
-     * 
-     * @return
+     * @param historique
+     * @return Interpreteur
      */
-    static Interpreteur init(Undo historique) {
+    static Interpreteur init(final Undo historique) {
         Interpreteur interpreteur = new Interpreteur();
         GeneriqueCommand quit = new Quit();
         interpreteur.addCommand("quit", quit);

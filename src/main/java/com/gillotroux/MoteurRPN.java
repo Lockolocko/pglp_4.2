@@ -9,12 +9,16 @@ import java.util.Stack;
 
 /**
  * MoteurRPN.
- * 
  * @author Lockolocko
- *
  */
-public class MoteurRPN {
+public final class MoteurRPN {
+    /**
+     * Liste des commandes disponibles.
+     */
     private Map<String, SpecificCommand> moteur;
+    /**
+     * Pile courante.
+     */
     private Stack<String> s;
 
     /**
@@ -27,13 +31,15 @@ public class MoteurRPN {
 
     /**
      * Ajoute une entrée.
-     * 
      * @param a
      */
     void enregistre(final int a) {
         s.addElement(String.valueOf(a));
     }
-
+    /**
+     * Depile un élément.
+     * @return string
+     */
     String depiler() {
         return s.pop();
     }
@@ -51,33 +57,33 @@ public class MoteurRPN {
 
     /**
      * Ajoute une commande.
-     * 
      * @param name
      * @param command
      */
-    void addCommand(String name, SpecificCommand command) {
+    void addCommand(final String name, final SpecificCommand command) {
         this.moteur.put(name, command);
     }
 
     /**
      * Execute une commande.
-     * 
      * @param name
      */
-    void executeCommand(String name) {
-        if (this.moteur.containsKey(name)) {
+    void executeCommand(final String name) {
+        if (this.moteur.containsKey(name) && s.size() >= 2) {
             int b = Integer.valueOf(s.pop());
             int a = Integer.valueOf(s.pop());
             s.push(String.valueOf(this.moteur.get(name).apply(a, b)));
+        } else {
+            System.out.println("Opérande insuffisante");
         }
     }
 
     /**
-     * Prend une nouvelle pile et la copie dans celle qui été couramment utilisée.
-     * 
+     * Prend une nouvelle pile et la copie dans celle
+qui été couramment utilisée.
      * @param pile
      */
-    void setStack(Stack<String> pile) {
+    void setStack(final Stack<String> pile) {
         @SuppressWarnings("unchecked")
         Stack<String> pileCopie = (Stack<String>) pile.clone();
         s = pileCopie;
@@ -85,8 +91,7 @@ public class MoteurRPN {
 
     /**
      * Retourne la pile courante.
-     * 
-     * @return
+     * @return pile
      */
     Stack<String> getStack() {
         return s;
@@ -94,8 +99,7 @@ public class MoteurRPN {
 
     /**
      * Constructeur public qui créer les commandes de notre moteur.
-     * 
-     * @return
+     * @return MoteurRPN
      */
     static MoteurRPN init() {
         MoteurRPN moteurInit = new MoteurRPN();

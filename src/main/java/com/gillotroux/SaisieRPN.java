@@ -7,9 +7,7 @@ import java.util.Scanner;
 
 /**
  * SaisieRPN.
- * 
  * @author Lockolocko
- *
  */
 public class SaisieRPN {
     /**
@@ -28,24 +26,28 @@ public class SaisieRPN {
      * Undo pile.
      */
     private Undo historique;
-
+    /**
+     * Constructeur.
+     */
     public SaisieRPN() {
         this.moteur = MoteurRPN.init();
         this.historique = new Undo();
         this.interprete = Interpreteur.init(historique);
     }
-
+    /**
+     * Gère les entree.
+     */
     public void entree() {
         System.out.println("Veuillez saisir une action :");
         String str = sc.nextLine();
-
         if (str.equals("quit")) {
             interprete.executeCommand(str);
         } else if (str.equals("undo")) {
             interprete.executeCommand(str);
             moteur.setStack(historique.getPile());
             moteur.affiche();
-        } else if (str.equals("-") || str.equals("*") || str.equals("/") || str.equals("+")) {
+        } else if (str.equals("-") || str.equals("*")
+|| str.equals("/") || str.equals("+")) {
             moteur.executeCommand(str);
             historique.add(moteur.getStack());
             moteur.affiche();
