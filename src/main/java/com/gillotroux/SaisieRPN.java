@@ -38,14 +38,17 @@ public class SaisieRPN {
         }
         else if (str.equals("undo")) {
             interprete.executeCommand(str);
+            moteur.affiche();
         }
         else if (str.equals("-") || str.equals("*")  || str.equals("/") || str.equals("+")) {
             moteur.executeCommand(str);
+            moteur.affiche();
         }
         else {
             try {
                 int nombre = Integer.parseInt(str);
                 moteur.enregistre(nombre);
+                moteur.affiche();
                 } catch(NumberFormatException e) {
                 System.out.println("Cette entrée est invalide");
               }      
